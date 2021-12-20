@@ -1,0 +1,10 @@
+rootProject.name = "DisneyFlutterAndroidDemo"
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../disney_flutter_module/.android/include_flutter.groovy'
+))
+
+include ':disney_flutter_module'
+project(':disney_flutter_module').projectDir = new File('../disney_flutter_module')
